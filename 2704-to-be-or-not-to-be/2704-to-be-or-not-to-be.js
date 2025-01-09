@@ -5,18 +5,20 @@ var expect = function(val1) {
     };
 };
 
-
-console.log(expect(5).toBe(5)); 
 try {
-    expect(5).notToBe(5); 
+    console.log(expect(5).toBe(5));  // true
 } catch (e) {
-    console.error(e.message); 
+    console.error(e.message);
 }
 
+try {
+    expect(5).notToBe(5);  // Throws "Equal"
+} catch (e) {
+    console.error(e.message);  // Logs: "Equal"
+}
 
-func = () => expect(5).toBe(5)
-
-
-
-expect(5).toBe(5); // true
-expect(5).notToBe(5); // throws "Equal"
+try {
+    console.log(expect(5).notToBe(6));  // true
+} catch (e) {
+    console.error(e.message);
+}
