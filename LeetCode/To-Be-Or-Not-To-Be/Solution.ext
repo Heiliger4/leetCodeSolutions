@@ -1,0 +1,3 @@
+Input: func = () => expect(5).toBe(5)
+Output: {"value": true}
+Explanation: 5 === 5 so this expression returns true.
