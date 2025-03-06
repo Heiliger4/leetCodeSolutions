@@ -7,6 +7,6 @@ class Solution:
             row = []
 
             for j in range(len(res[i]) + 1):
-                row.append(temp[j] + temp[j+1])
+                row.append(temp[j] + temp[j + 1])
             res.append(row)
         return res
