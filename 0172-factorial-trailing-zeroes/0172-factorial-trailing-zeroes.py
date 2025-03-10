@@ -15,7 +15,7 @@ class Solution:
         
         # Count trailing zeros
         count = 0
-        while answer % 10 == 0:
+        while answer % 10 == 0 and answer !=0:
             answer //= 10
             count += 1
         
