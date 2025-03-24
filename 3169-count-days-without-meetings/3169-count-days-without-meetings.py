@@ -1,7 +1,13 @@
 class Solution:
     def countDays(self, days: int, meetings: List[List[int]]) -> int:
-        busy_days = set()
+        meetings.sort()
+        merged = []
+        
         for start, end in meetings:
-            for day in range(start, end + 1):
-                busy_days.add(day)
-        return days - len(busy_days)
+            if not merged or merged[-1][1] < start:
+                merged.append([start, end])
+            else:
+                merged[-1][1] = max(merged[-1][1], end)
+        
+        busy_days = sum(end - start + 1 for start, end in merged)
+        return days - busy_days
