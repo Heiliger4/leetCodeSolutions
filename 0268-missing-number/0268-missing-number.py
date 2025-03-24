@@ -5,5 +5,4 @@ class Solution:
             oSum += i
         for i in range(len(nums)+1):
             eSum += i
-        missingNum = eSum - oSum
-        return missingNum
+        return eSum - oSum
